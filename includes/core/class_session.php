@@ -128,7 +128,7 @@ class Session {
         // update
         return Session::session_create();
     }
-    
+
     // SERVICE
 
     private static function session_refresh() {

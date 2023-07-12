@@ -64,8 +64,8 @@ class Plot {
         // paginator
         $q = DB::query("SELECT count(*) FROM plots ".$where.";");
         $count = ($row = DB::fetch_row($q)) ? $row['count(*)'] : 0;
-        $url = 'plots';
-        if ($search) $url .= '?search='.$search.'&';
+        $url = 'plots?';
+        if ($search) $url .= '&search='.$search;
         paginator($count, $offset, $limit, $url, $paginator);
         // output
         return ['items' => $items, 'paginator' => $paginator];
